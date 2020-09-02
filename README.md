@@ -32,10 +32,30 @@
 
 ## Exercises
 
-1. Create a new react app and add the following dependencies: [`react-three-fiber`](https://www.npmjs.com/package/react-three-fiber) [`drei`](https://www.npmjs.com/package/drei)
+1. Create a new react app and add the following dependencies:
+   [`react-three-fiber`](https://www.npmjs.com/package/react-three-fiber)
+   [`drei`](https://www.npmjs.com/package/drei)
+   [`three`](https://www.npmjs.com/package/three)
 
-First we will need a `<Canvas />` element to draw on. import it from `drei` and add it in Index.js.
+First we will need a `<Canvas />` element to draw on. Add a `components` folder and create a new file
 
+Whenever we want to create a 3D shape in react three fiber we use the `<mesh>` element. 
+
+So for instance if we want a pink cube with a side length of 1 we would write: 
+
+```javascript
+  <mesh>
+    <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
+    <meshStandardMaterial attach="material" color="hotpink" />
+  </mesh>
+
+```
+Copy the snippet into a react component that accepts a `color` and `size` prop:
+
+```javascript
+<Cube size={1} color="hotpink" />
+```
+`drei` is a useful collection of helpers for `react-three-fiber`
 Try adding `<OrbitControls/>` to your scene! you should now be able to move around your scene.
 
 It should look something like this:
