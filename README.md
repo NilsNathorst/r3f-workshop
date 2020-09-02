@@ -39,29 +39,30 @@
 
 First we will need a `<Canvas />` element to draw on. Add a `components` folder and create a new file
 
-Whenever we want to create a 3D shape in react three fiber we use the `<mesh>` element. 
+Whenever we want to create a 3D shape in react three fiber we use the `<mesh>` element.
 
-So for instance if we want a pink cube with a side length of 1 we would write: 
+So for instance if we want a pink cube with a side length of 1 we would write:
 
 ```javascript
-  <mesh>
-    <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
-    <meshStandardMaterial attach="material" color="hotpink" />
-  </mesh>
-
+<mesh>
+  <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
+  <meshStandardMaterial attach="material" color="hotpink" />
+</mesh>
 ```
+
 Copy the snippet into a react component that accepts a `color` and `size` prop:
 
 ```javascript
 <Cube size={1} color="hotpink" />
 ```
+
 `drei` is a useful collection of helpers for `react-three-fiber`
 Try adding `<OrbitControls/>` to your scene! you should now be able to move around your scene.
 
 It should look something like this:
 
   <p align="center">
-    <img src="https://via.placeholder.com/350x150" width="80%" alt="box with orbitControls">
+    <img src="/img/Lesson_1.gif" width="80%" alt="box with orbitControls">
   </p>
 2. Continue working on the previous assignment. Add a `<Plane />` beneath your box and add some lights! (`<directionalLight/>`).
 
