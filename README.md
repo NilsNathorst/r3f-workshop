@@ -37,11 +37,39 @@
    [`drei`](https://www.npmjs.com/package/drei)
    [`three`](https://www.npmjs.com/package/three)
 
-First we will need a `<Canvas />` element to draw on. Add a `components` folder and create a new file
+Since we are using [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API) we will need a `canvas` element. Luckily we can import it from `react-three-fiber` and add it to our react app.
 
-Whenever we want to create a 3D shape in react three fiber we use the `<mesh>` element.
+```javascript
+import { Canvas } from "react-three-fiber";
 
-So for instance if we want a pink cube with a side length of 1 we would write:
+export default function App() {
+  return (
+    <div className="App">
+      <Canvas>
+      // 3D Stuff
+      { ... }
+      </Canvas>
+    </div>
+  );
+}
+```
+
+I also recommend adding some css to make our canvas a bit bigger.
+
+```css
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+canvas {
+  height: 100%;
+  width: 100%;
+  background: dodgerblue;
+}
+```
+
+Let's begin! whenever we want to create a 3D shape in react three fiber we use the `<mesh>` element. So for instance if we want a pink cube with a side length of 1 we simply write:
 
 ```javascript
 <mesh>
@@ -50,35 +78,30 @@ So for instance if we want a pink cube with a side length of 1 we would write:
 </mesh>
 ```
 
-Copy the snippet into a react component that accepts a `color` and `size` prop:
+Copy the snippet into a react component that accepts `color`, `width`, `height` & `depth` as props.
 
 ```javascript
-<Cube size={1} color="hotpink" />
+<Cube width={1} height={1} depth={1} color="hotpink" />
 ```
 
-`drei` is a useful collection of helpers for `react-three-fiber`
-Try adding `<OrbitControls/>` to your scene! you should now be able to move around your scene.
+Now you probably still have a black cube, and that is because we haven't added any [lights](https://threejs.org/docs/#api/en/lights/AmbientLight) to our scene yet. go ahead and add `<ambientLight/>` inside your canvas. No imports needed! Now you should be able to see the color you assigned to your cube.
+
+`drei` is a useful collection of helpers for `react-three-fiber` try adding the `<OrbitControls/>` to your scene.
 
 It should look something like this:
 
   <p align="center">
     <img src="/img/Lesson_1.gif" width="80%" alt="box with orbitControls">
   </p>
-2. Continue working on the previous assignment. Add a `<Plane />` beneath your box and add some lights! (`<directionalLight/>`).
 
-It should look something like this:
-
-  <p align="center">
-    <img src="https://via.placeholder.com/350x150" width="80%" alt="box with floor">
-  </p>
-3. Continue working on the previous assignment. Add an `onClick` to your `<Box>` and see if you can change the color and size of the `<Box>`.
+2. Continue working on the previous assignment. Add an `onClick` to your `<Box>` and see if you can change the color and size of the `<Box>`.
 
 It should look something like this:
 
   <p align="center">
     <img src="https://via.placeholder.com/350x150" width="80%" alt="two boxes changing size">
   </p>
-4. Now it's time to create a new project, just like in step 1. This time we will also add [`react-spring`](https://www.npmjs.com/package/react-spring) to ur dependencies which will allow us animate our shapes.
+3. Now it's time to create a new project, just like in step 1. This time we will also add [`react-spring`](https://www.npmjs.com/package/react-spring) to ur dependencies which will allow us animate our shapes.
 
 Copy the `Planets` array from the [`Planets.js`](resources/Planets.js) file.
 Iterate over the Planets and create a `<sphereBufferGeometry/>` for each one. Use the `size` property to determine it's radius (tip: the ratios between the planets sizes might not look great, try to figure out a way to keep them somewhat proportionate while still presenting them nicely).
@@ -91,8 +114,8 @@ It should look something like this:
     <img src="https://via.placeholder.com/350x150" width="80%" alt="solar system linear">
   </p>
 
-5. Continue working on the previous assignment. Now let's animate the planets. Each planet has a `orbitalVelocity` property. Use this to determine how fast they should orbit around the Sun.
+4. Continue working on the previous assignment. Now let's animate the planets. Each planet has a `orbitalVelocity` property. Use this to determine how fast they should orbit around the Sun.
 
-**Extra:** 6. Check out [drei's documentation](https://drei.react-spring.io/?path=/story/abstractions-billboard--billboard-st) and add a `<Html/>` to each of the planet containing the planet's name!
+**Extra:** 5. Check out [drei's documentation](https://drei.react-spring.io/?path=/story/abstractions-billboard--billboard-st) and add a `<Html/>` to each of the planet containing the planet's name!
 
-**Extra:** 7. If you still have time, continue on your solar system and see what else you can add! Perhaps lines indicating the orbit of the planets, some info about the planets triggered when clicking them or maybe add some textures to the planets surface?
+**Extra:** 6. If you still have time, continue on your solar system and see what else you can add! Perhaps lines indicating the orbit of the planets, some info about the planets triggered when clicking them or maybe add some textures to the planets surface?
