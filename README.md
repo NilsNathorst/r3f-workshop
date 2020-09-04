@@ -116,12 +116,17 @@ It should look something like this:
     <img src="/img/Lesson_2.gif" width="80%" alt="two boxes changing size">
   </p>
 
-3. Now it's time to create a new project, just like in step 1. This time we will also add [`react-spring`](https://www.npmjs.com/package/react-spring) to ur dependencies which will allow us animate our shapes.
+3. Now it's time to create a new project, just like in step 1.
 
 Copy the `Planets` array from the [`Planets.js`](resources/Planets.js) file.
-Iterate over the Planets and create a `<sphereBufferGeometry/>` for each one. Use the `size` property to determine it's radius (tip: the ratios between the planets sizes might not look great, try to figure out a way to keep them somewhat proportionate while still presenting them nicely).
+Iterate over the Planets and create a `<sphereBufferGeometry/>` for each one.
+Use the `size` property to determine it's radius (tip: if they are way too big, add a multiplier to the size: `* 0.01` to scale them down).
 
-If we let position `[0,0,0]` represent the Sun's position. Position the planets accordingly using their `distanceFromSun` property.
+Feel free to add a Sun to the scene aswell. If we let position `[0,0,0]` represent the Sun's position. Position the planets accordingly using their `distanceFromSun` property.
+
+4. Continue working on the previous assignment. Now let's animate the planets. Each planet has a `orbitalVelocity` property. Use this to determine how fast they should orbit around the Sun.
+
+I suggest placing the planets within a `<group>` element since the groups position will default to `[0,0,0]` and we can use that as a pivot point when we rotate the planet.
 
 It should look something like this:
 
@@ -129,12 +134,6 @@ It should look something like this:
     <img src="/img/Lesson_3.gif"  width="80%" alt="solar system linear">
   </p>
 
-4. Continue working on the previous assignment. Now let's animate the planets. Each planet has a `orbitalVelocity` property. Use this to determine how fast they should orbit around the Sun.
-
 **Extra:** 5. Check out [drei's documentation](https://drei.react-spring.io/?path=/story/abstractions-billboard--billboard-st) and add a `<Html/>` to each of the planet containing the planet's name!
 
-**Extra:** 6. If you still have time, continue on your solar system and see what else you can add! Perhaps lines indicating the orbit of the planets, some info about the planets triggered when clicking them or maybe add some textures to the planets surface?
-
-```
-
-```
+**Extra:** 6. If you still have time, continue on your solar system and see what else you can add! Perhaps lines indicating the orbit of the planets, some info about the planets triggered when clicking them or maybe check out some [texture loaders](https://drei.react-spring.io/?path=/story/loaders-cubetexture--use-cube-texture-loader-scene-st) and add some textures to the planets!
