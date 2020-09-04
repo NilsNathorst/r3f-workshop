@@ -117,7 +117,9 @@ return (
 )
 ```
 
-Now if we add `a.` to our mesh (i.e `<a.mesh/>`) some of it's properties can be animated with react-spring, check out the documentation for [`useSpring`](https://www.react-spring.io/docs/hooks/use-spring) and then see if you can add an `onClick` that changes the `scale` property of the mesh and ahover effect that changes the `color` of the cube.
+Now if we add `a.` to our mesh (i.e `<a.mesh/>`) some of it's properties can be animated with react-spring, check out the documentation for [`useSpring`](https://www.react-spring.io/docs/hooks/use-spring) and then see if you can add an `onClick` that changes the `scale` property of the mesh and a hover effect that changes the `color` of the cube.
+
+The scale property accepts an array containing a [Vector3](https://threejs.org/docs/#api/en/math/Vector3)
 
 Don't forget to update your material `<a.meshStandardMaterial/>`
 
@@ -133,7 +135,7 @@ Copy the `Planets` array from the [`Planets.js`](resources/Planets.js) file.
 Iterate over the Planets and create a [`<sphereBufferGeometry/>`](https://threejs.org/docs/#api/en/geometries/SphereBufferGeometry) for each one. Use the `size` property to determine it's radius, pass it as the first parameter of `args`.
 (tip: if they are way too big, use the scale attribute of the mesh to make them smaller).
 
-If we imagine position `[0,0,0]` as the Sun's position place the planets accordingly using their `distanceFromSun` property along the x-axis.
+If we imagine position `[0,0,0]` as the Sun's position place the planets accordingly using their `distanceFromSun` property along the x-axis. (I'll let you figure out how to add a Sun on your own)
 
 4. Continue working on the previous assignment. Now let's animate the planets. Each planet has a `orbitalVelocity` property. Use this to determine how fast they should orbit around the Sun.
 
