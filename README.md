@@ -84,7 +84,7 @@ Copy the snippet into a react component that accepts `color`, `width`, `height` 
 <Cube width={1} height={1} depth={1} color="hotpink" />
 ```
 
-Now you probably still have a black cube, and that is because we haven't added any [lights](https://threejs.org/docs/#api/en/lights/AmbientLight) to our scene yet. go ahead and add `<ambientLight/>` inside your canvas. No imports needed! Now you should be able to see the color you assigned to your cube.
+Now you probably still have a black cube, and that is because we haven't added any [lights](https://threejs.org/docs/#api/en/lights/AmbientLight) to our scene yet. go ahead and add `<ambientLight/>` inside your canvas (optionally you can add a [`<pointLight/>`](https://threejs.org/docs/#api/en/lights/PointLight) aswell, it can be positioned via the `position` prop). No imports needed! Now you should be able to see the color you assigned to your cube.
 
 `drei` is a useful collection of helpers for `react-three-fiber` try adding the `<OrbitControls/>` to your scene.
 
@@ -94,13 +94,28 @@ It should look something like this:
     <img src="/img/Lesson_1.gif" width="80%" alt="box with orbitControls">
   </p>
 
-2. Continue working on the previous assignment. Add an `onClick` to your `<Box>` and see if you can change the color and size of the `<Box>`.
+2. Continue working on the previous assignment. Now we are going to animate our `<Cube />`. First add [`react-spring`](https://www.npmjs.com/package/react-spring) to your dependencies.
+
+   ```javascript
+   import { useSpring, a } from "react-spring/three"
+
+   //...
+
+   return (
+      <a.mesh>
+      { ... }
+      </a.mesh>
+   )
+   ```
+
+   Now if we add `a.` to our mesh it can be animated with react-spring, check out the documentation for useSpring and see if you can add a hover effect and an onClick.
 
 It should look something like this:
 
   <p align="center">
-    <img src="https://via.placeholder.com/350x150" width="80%" alt="two boxes changing size">
+    <img src="/img/Lesson_2.gif" width="80%" alt="two boxes changing size">
   </p>
+
 3. Now it's time to create a new project, just like in step 1. This time we will also add [`react-spring`](https://www.npmjs.com/package/react-spring) to ur dependencies which will allow us animate our shapes.
 
 Copy the `Planets` array from the [`Planets.js`](resources/Planets.js) file.
@@ -119,3 +134,7 @@ It should look something like this:
 **Extra:** 5. Check out [drei's documentation](https://drei.react-spring.io/?path=/story/abstractions-billboard--billboard-st) and add a `<Html/>` to each of the planet containing the planet's name!
 
 **Extra:** 6. If you still have time, continue on your solar system and see what else you can add! Perhaps lines indicating the orbit of the planets, some info about the planets triggered when clicking them or maybe add some textures to the planets surface?
+
+```
+
+```
