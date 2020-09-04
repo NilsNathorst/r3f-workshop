@@ -108,7 +108,7 @@ It should look something like this:
    )
    ```
 
-   Now if we add `a.` to our mesh it can be animated with react-spring, check out the documentation for useSpring and see if you can add a hover effect and an onClick.
+   Now if we add `a.` to our mesh it can be animated with react-spring, check out the documentation for useSpring and then see if you can add a hover effect that changes the `color` of the cube and an `onClick` that changes the `scale` property of the mesh.
 
 It should look something like this:
 
@@ -126,7 +126,7 @@ If we let position `[0,0,0]` represent the Sun's position. Position the planets 
 It should look something like this:
 
   <p align="center">
-    <img src="https://via.placeholder.com/350x150" width="80%" alt="solar system linear">
+    <img src="/img/Lesson_3.gif"  width="80%" alt="solar system linear">
   </p>
 
 4. Continue working on the previous assignment. Now let's animate the planets. Each planet has a `orbitalVelocity` property. Use this to determine how fast they should orbit around the Sun.
