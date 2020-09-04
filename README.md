@@ -132,9 +132,8 @@ You will also need to use the `useFrame` hook from `react-three-fiber` and add a
 const mesh = useRef();
 
 useFrame(() => {
-  /* do something each frame 
-    mesh.current.position += 1
-  
+  /* Example: move something sideways 
+    mesh.current.position.x += 1
   */
 });
 ```
