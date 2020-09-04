@@ -137,6 +137,10 @@ Iterate over the Planets and create a [`<sphereBufferGeometry/>`](https://threej
 
 If we imagine position `[0,0,0]` as the Sun's position place the planets accordingly using their `distanceFromSun` property along the x-axis. (I'll let you figure out how to add a Sun on your own)
 
+```javascript
+<mesh position={[ ... ]}>
+```
+
 4. Continue working on the previous assignment. Now let's animate the planets. Each planet has a `orbitalVelocity` property. Use this to determine how fast they should orbit around the Sun.
 
 I suggest placing the planets within a `<group>` element since the groups position will default to `[0,0,0]` and we can use that as a pivot point when we rotate the planet.
