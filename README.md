@@ -12,7 +12,7 @@
 
 - :books: Documentation
 
-- [react-three-fiber](https://inspiring-wiles-b4ffe0.netlify.app/)
+- [react-three-fiber](https://github.com/react-spring/react-three-fiber)
 
 - [three.js](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene)
 
@@ -120,11 +120,24 @@ It should look something like this:
 
 Copy the `Planets` array from the [`Planets.js`](resources/Planets.js) file.
 Iterate over the Planets and create a `<sphereBufferGeometry/>` for each one.
-Use the `size` property to determine it's radius (tip: if they are way too big, add a multiplier to the size: `* 0.01` to scale them down). Feel free to add a Sun to the scene aswell. If we let position `[0,0,0]` represent the Sun's position. Position the planets accordingly using their `distanceFromSun` property.
+Use the `size` property to determine it's radius (tip: if they are way too big, use the scale attribute of the mesh to make them smaller). Feel free to add a Sun to the scene aswell. If we let position `[0,0,0]` represent the Sun's position. Position the planets accordingly using their `distanceFromSun` property.
 
 4. Continue working on the previous assignment. Now let's animate the planets. Each planet has a `orbitalVelocity` property. Use this to determine how fast they should orbit around the Sun.
 
 I suggest placing the planets within a `<group>` element since the groups position will default to `[0,0,0]` and we can use that as a pivot point when we rotate the planet.
+
+You will also need to use the `useFrame` hook from `react-three-fiber` and add a reference to your mesh or group to then be able to update it each frame.
+
+```javascript
+const mesh = useRef();
+
+useFrame(() => {
+  /* do something each frame 
+    mesh.current.position += 1
+  
+  */
+});
+```
 
 It should look something like this:
 
