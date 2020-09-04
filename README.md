@@ -6,29 +6,29 @@
 
 - :scissors: Examples
 
-- [Three JS examples](https://threejs.org/)
+  - [Three JS examples](https://threejs.org/)
 
-- [React three fiber examples](https://codesandbox.io/examples/package/react-three-fiber)
+  - [React three fiber examples](https://codesandbox.io/examples/package/react-three-fiber)
 
 - :books: Documentation
 
-- [react-three-fiber](https://github.com/react-spring/react-three-fiber)
+  - [react-three-fiber](https://github.com/react-spring/react-three-fiber)
 
-- [three.js](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene)
+  - [three.js](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene)
 
-- [drei](https://drei.react-spring.io/?path=/story/abstractions-billboard--billboard-st)
+  - [drei](https://drei.react-spring.io/?path=/story/abstractions-billboard--billboard-st)
 
-- [react-spring](https://www.react-spring.io/docs/hooks/basics)
+  - [react-spring](https://www.react-spring.io/docs/hooks/basics)
 
 - :link: Links
 
-- [Three JS examples](https://threejs.org/)
+  - [Three JS examples](https://threejs.org/)
 
-- [React three fiber examples](https://codesandbox.io/examples/package/react-three-fiber)
+  - [React three fiber examples](https://codesandbox.io/examples/package/react-three-fiber)
 
 - :headphones: Screencasts
 
-- [`Basics with Paul Henschel`](https://www.youtube.com/watch?v=1rP3nNY2hTo) the creator of r3f & react-spring
+  - [`Basics with Paul Henschel`](https://www.youtube.com/watch?v=1rP3nNY2hTo) the creator of r3f & react-spring
 
 ## Exercises
 
@@ -62,9 +62,17 @@ I also recommend adding some css to make our canvas a bit bigger.
   height: 100vh;
 }
 
-canvas {
-  height: 100%;
+body {
+  margin: 0;
+}
+
+canvas,
+.App {
   width: 100%;
+  height: 100%;
+}
+
+canvas {
   background: dodgerblue;
 }
 ```
@@ -84,14 +92,15 @@ Copy the snippet into a react component that accepts `color`, `width`, `height` 
 <Cube width={1} height={1} depth={1} color="hotpink" />
 ```
 
-Now you probably still have a black cube, and that is because we haven't added any [lights](https://threejs.org/docs/#api/en/lights/AmbientLight) to our scene yet. go ahead and add `<ambientLight/>` inside your canvas (optionally you can add a [`<pointLight/>`](https://threejs.org/docs/#api/en/lights/PointLight) aswell, it can be positioned via the `position` prop). No imports needed! Now you should be able to see the color you assigned to your cube.
+Now you probably still have a black cube, and that is because we haven't added any [lights](https://threejs.org/docs/#api/en/lights/AmbientLight) to our scene yet. go ahead and add `<ambientLight/>` inside your canvas (optionally you can add a [`<pointLight/>`](https://threejs.org/docs/#api/en/lights/PointLight) aswell, it can be positioned via the `position` prop, you will need to provide it with an array containing a [Vector3](https://threejs.org/docs/#api/en/math/Vector3), meaning a x, y & z value).
+You should now see the color of your cube.
 
 `drei` is a useful collection of helpers for `react-three-fiber` try adding the `<OrbitControls/>` to your scene.
 
 It should look something like this:
 
 <p align="center">
-  <img src="/img/Lesson_1.gif" width="80%" alt="box with orbitControls">
+  <img src="/img/Lesson_1.gif" width="80%">
 </p>
 
 2. Continue working on the previous assignment. Now we are going to animate our `<Cube />`. First add [`react-spring`](https://www.npmjs.com/package/react-spring) to your dependencies.
@@ -108,12 +117,14 @@ return (
 )
 ```
 
-Now if we add `a.` to our mesh it can be animated with react-spring, check out the documentation for useSpring and then see if you can add a hover effect that changes the `color` of the cube and an `onClick` that changes the `scale` property of the mesh.
+Now if we add `a.` to our mesh (i.e `<a.mesh/>`) some of it's properties can be animated with react-spring, check out the documentation for [`useSpring`](https://www.react-spring.io/docs/hooks/use-spring) and then see if you can add an `onClick` that changes the `scale` property of the mesh and ahover effect that changes the `color` of the cube.
+
+Don't forget to update your material `<a.meshStandardMaterial/>`
 
 It should look something like this:
 
 <p align="center">
-  <img src="/img/Lesson_2.gif" width="80%" alt="two boxes changing size">
+  <img src="/img/Lesson_2.gif" width="80%">
 </p>
 
 3. Now it's time to create a new project, just like in step 1.
@@ -126,7 +137,7 @@ Use the `size` property to determine it's radius (tip: if they are way too big, 
 
 I suggest placing the planets within a `<group>` element since the groups position will default to `[0,0,0]` and we can use that as a pivot point when we rotate the planet.
 
-You will also need to use the `useFrame` hook from `react-three-fiber` and add a reference to your mesh or group to then be able to update it each frame.
+You will also need to use the `useFrame` hook from `react-three-fiber` and add a reference to your mesh or group to then be able to update it's properties each frame.
 
 ```javascript
 const mesh = useRef();
@@ -141,7 +152,7 @@ useFrame(() => {
 It should look something like this:
 
 <p align="center">
-  <img src="/img/Lesson_3.gif"  width="80%" alt="solar system linear">
+  <img src="/img/Lesson_3.gif"  width="80%">
 </p>
 
 **Extra:** 5. Check out [drei's documentation](https://drei.react-spring.io/?path=/story/abstractions-billboard--billboard-st) and add a `<Html/>` to each of the planets containing the planet's name!
