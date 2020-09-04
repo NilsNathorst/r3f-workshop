@@ -6,29 +6,29 @@
 
 - :scissors: Examples
 
-  - [Three JS examples](https://threejs.org/)
+- [Three JS examples](https://threejs.org/)
 
-  - [React three fiber examples](https://codesandbox.io/examples/package/react-three-fiber)
+- [React three fiber examples](https://codesandbox.io/examples/package/react-three-fiber)
 
 - :books: Documentation
 
-  - [react-three-fiber](https://inspiring-wiles-b4ffe0.netlify.app/)
+- [react-three-fiber](https://inspiring-wiles-b4ffe0.netlify.app/)
 
-  - [three.js](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene)
+- [three.js](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene)
 
-  - [drei](https://drei.react-spring.io/?path=/story/abstractions-billboard--billboard-st)
+- [drei](https://drei.react-spring.io/?path=/story/abstractions-billboard--billboard-st)
 
-  - [react-spring](https://www.react-spring.io/docs/hooks/basics)
+- [react-spring](https://www.react-spring.io/docs/hooks/basics)
 
 - :link: Links
 
-  - [Three JS examples](https://threejs.org/)
+- [Three JS examples](https://threejs.org/)
 
-  - [React three fiber examples](https://codesandbox.io/examples/package/react-three-fiber)
+- [React three fiber examples](https://codesandbox.io/examples/package/react-three-fiber)
 
 - :headphones: Screencasts
 
-  - [`Basics with Paul Henschel`](https://www.youtube.com/watch?v=1rP3nNY2hTo) the creator of r3f & react-spring
+- [`Basics with Paul Henschel`](https://www.youtube.com/watch?v=1rP3nNY2hTo) the creator of r3f & react-spring
 
 ## Exercises
 
@@ -43,14 +43,14 @@ Since we are using [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebG
 import { Canvas } from "react-three-fiber";
 
 export default function App() {
-  return (
-    <div className="App">
-      <Canvas>
-      // 3D Stuff
-      { ... }
-      </Canvas>
-    </div>
-  );
+return (
+<div className="App">
+<Canvas>
+// 3D Stuff
+{ ... }
+</Canvas>
+</div>
+);
 }
 ```
 
@@ -90,9 +90,9 @@ Now you probably still have a black cube, and that is because we haven't added a
 
 It should look something like this:
 
-  <p align="center">
-    <img src="/img/Lesson_1.gif" width="80%" alt="box with orbitControls">
-  </p>
+<p align="center">
+<img src="/img/Lesson_1.gif" width="80%" alt="box with orbitControls">
+</p>
 
 2. Continue working on the previous assignment. Now we are going to animate our `<Cube />`. First add [`react-spring`](https://www.npmjs.com/package/react-spring) to your dependencies.
 
@@ -102,9 +102,9 @@ import { useSpring, a } from "react-spring/three"
 //...
 
 return (
-  <a.mesh>
-  { ... }
-  </a.mesh>
+<a.mesh>
+{ ... }
+</a.mesh>
 )
 ```
 
@@ -112,9 +112,9 @@ Now if we add `a.` to our mesh it can be animated with react-spring, check out t
 
 It should look something like this:
 
-  <p align="center">
-    <img src="/img/Lesson_2.gif" width="80%" alt="two boxes changing size">
-  </p>
+<p align="center">
+<img src="/img/Lesson_2.gif" width="80%" alt="two boxes changing size">
+</p>
 
 3. Now it's time to create a new project, just like in step 1.
 
@@ -128,9 +128,9 @@ I suggest placing the planets within a `<group>` element since the groups positi
 
 It should look something like this:
 
-  <p align="center">
-    <img src="/img/Lesson_3.gif"  width="80%" alt="solar system linear">
-  </p>
+<p align="center">
+<img src="/img/Lesson_3.gif"  width="80%" alt="solar system linear">
+</p>
 
 **Extra:** 5. Check out [drei's documentation](https://drei.react-spring.io/?path=/story/abstractions-billboard--billboard-st) and add a `<Html/>` to each of the planets containing the planet's name!
 
