@@ -130,8 +130,10 @@ It should look something like this:
 3. Now it's time to create a new project, just like in step 1.
 
 Copy the `Planets` array from the [`Planets.js`](resources/Planets.js) file.
-Iterate over the Planets and create a `<sphereBufferGeometry/>` for each one.
-Use the `size` property to determine it's radius (tip: if they are way too big, use the scale attribute of the mesh to make them smaller). Feel free to add a Sun to the scene aswell. If we let position `[0,0,0]` represent the Sun's position. Position the planets accordingly using their `distanceFromSun` property.
+Iterate over the Planets and create a [`<sphereBufferGeometry/>`](https://threejs.org/docs/#api/en/geometries/SphereBufferGeometry) for each one. Use the `size` property to determine it's radius, pass it as the first parameter of `args`.
+(tip: if they are way too big, use the scale attribute of the mesh to make them smaller).
+
+If we imagine position `[0,0,0]` as the Sun's position place the planets accordingly using their `distanceFromSun` property along the x-axis.
 
 4. Continue working on the previous assignment. Now let's animate the planets. Each planet has a `orbitalVelocity` property. Use this to determine how fast they should orbit around the Sun.
 
