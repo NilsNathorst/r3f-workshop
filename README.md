@@ -96,19 +96,19 @@ It should look something like this:
 
 2. Continue working on the previous assignment. Now we are going to animate our `<Cube />`. First add [`react-spring`](https://www.npmjs.com/package/react-spring) to your dependencies.
 
-   ```javascript
-   import { useSpring, a } from "react-spring/three"
+```javascript
+import { useSpring, a } from "react-spring/three"
 
-   //...
+//...
 
-   return (
-      <a.mesh>
-      { ... }
-      </a.mesh>
-   )
-   ```
+return (
+  <a.mesh>
+  { ... }
+  </a.mesh>
+)
+```
 
-   Now if we add `a.` to our mesh it can be animated with react-spring, check out the documentation for useSpring and then see if you can add a hover effect that changes the `color` of the cube and an `onClick` that changes the `scale` property of the mesh.
+Now if we add `a.` to our mesh it can be animated with react-spring, check out the documentation for useSpring and then see if you can add a hover effect that changes the `color` of the cube and an `onClick` that changes the `scale` property of the mesh.
 
 It should look something like this:
 
@@ -120,9 +120,7 @@ It should look something like this:
 
 Copy the `Planets` array from the [`Planets.js`](resources/Planets.js) file.
 Iterate over the Planets and create a `<sphereBufferGeometry/>` for each one.
-Use the `size` property to determine it's radius (tip: if they are way too big, add a multiplier to the size: `* 0.01` to scale them down).
-
-Feel free to add a Sun to the scene aswell. If we let position `[0,0,0]` represent the Sun's position. Position the planets accordingly using their `distanceFromSun` property.
+Use the `size` property to determine it's radius (tip: if they are way too big, add a multiplier to the size: `* 0.01` to scale them down). Feel free to add a Sun to the scene aswell. If we let position `[0,0,0]` represent the Sun's position. Position the planets accordingly using their `distanceFromSun` property.
 
 4. Continue working on the previous assignment. Now let's animate the planets. Each planet has a `orbitalVelocity` property. Use this to determine how fast they should orbit around the Sun.
 
@@ -134,6 +132,6 @@ It should look something like this:
     <img src="/img/Lesson_3.gif"  width="80%" alt="solar system linear">
   </p>
 
-**Extra:** 5. Check out [drei's documentation](https://drei.react-spring.io/?path=/story/abstractions-billboard--billboard-st) and add a `<Html/>` to each of the planet containing the planet's name!
+**Extra:** 5. Check out [drei's documentation](https://drei.react-spring.io/?path=/story/abstractions-billboard--billboard-st) and add a `<Html/>` to each of the planets containing the planet's name!
 
 **Extra:** 6. If you still have time, continue on your solar system and see what else you can add! Perhaps lines indicating the orbit of the planets, some info about the planets triggered when clicking them or maybe check out some [texture loaders](https://drei.react-spring.io/?path=/story/loaders-cubetexture--use-cube-texture-loader-scene-st) and add some textures to the planets!
