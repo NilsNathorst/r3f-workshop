@@ -143,7 +143,7 @@ If we imagine position `[0,0,0]` as the Sun's position place the planets accordi
 
 4. Continue working on the previous assignment. Now let's animate the planets. Each planet has a `orbitalVelocity` property. Use this to determine how fast they should orbit around the Sun.
 
-I suggest placing the planets within a `<group>` element since the groups position will default to `[0,0,0]` and we can use that as a pivot point when we rotate the planet.
+I suggest placing each of the planets within a `<group>` element since the groups position will default to `[0,0,0]` and we can use that as a pivot point when we rotate the planet.
 
 You will also need to use the `useFrame` hook from `react-three-fiber` and add a reference to your mesh or group to then be able to update it's properties each frame.
 
