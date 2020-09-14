@@ -86,7 +86,7 @@ Let's begin! whenever we want to create a 3D shape in react three fiber we use t
 </mesh>
 ```
 
-Copy the snippet into a react component that accepts `color`, `width`, `height` & `depth` as props.
+Now let's create our cube component. Copy the snippet into a react component that accepts `color`, `width`, `height` & `depth` as props.
 
 ```javascript
 <Cube width={1} height={1} depth={1} color="hotpink" />
@@ -95,7 +95,11 @@ Copy the snippet into a react component that accepts `color`, `width`, `height` 
 Now you probably still have a black cube, and that is because we haven't added any [lights](https://threejs.org/docs/#api/en/lights/AmbientLight) to our scene yet. go ahead and add `<ambientLight/>` inside your canvas (optionally you can add a [`<pointLight/>`](https://threejs.org/docs/#api/en/lights/PointLight) aswell, it can be positioned via the `position` prop, you will need to provide it with an array containing a [Vector3](https://threejs.org/docs/#api/en/math/Vector3), meaning a x, y & z value).
 You should now see the color of your cube.
 
-`drei` is a useful collection of helpers for `react-three-fiber` try adding the `<OrbitControls/>` to your scene.
+`drei` that we installed is a useful collection of helpers for `react-three-fiber` try importing and adding `<OrbitControls/>` to your scene.
+
+```javascript
+import { OrbitControls } from "drei";
+```
 
 It should look something like this:
 
@@ -103,21 +107,24 @@ It should look something like this:
   <img src="/img/Lesson_1.gif" width="80%">
 </p>
 
-2. Continue working on the previous assignment. Now we are going to animate our `<Cube />`. First add [`react-spring`](https://www.npmjs.com/package/react-spring) to your dependencies.
+2. Continue working on the previous assignment. We are going to animate our `<Cube />`. First add [`react-spring`](https://www.npmjs.com/package/react-spring) to your dependencies.
 
 ```javascript
 import { useSpring, a } from "react-spring/three"
 
   //...
+  const props = useSpring({
+    scale: clicked ? [1.5, 1.5, 1.5] : [1, 1, 1],
+  });
 
 return (
-  <a.mesh>
+  <a.mesh scale={props.scale}>
   { ... }
   </a.mesh>
 )
 ```
 
-Now if we add `a.` to our mesh (i.e `<a.mesh/>`) some of it's properties can be animated with react-spring, check out the documentation for [`useSpring`](https://www.react-spring.io/docs/hooks/use-spring) and then see if you can add an `onClick` that changes the `scale` property of the mesh and a hover effect that changes the `color` of the cube.
+Now when we add `a.` to our mesh (i.e `<a.mesh/>`) some of it's properties can be animated with react-spring, check out the documentation for [`useSpring`](https://www.react-spring.io/docs/hooks/use-spring) and then see if you can add an `onClick` that changes the `scale` property of the mesh and a hover effect that changes the `color` of the cube.
 
 The scale property accepts an array containing a [Vector3](https://threejs.org/docs/#api/en/math/Vector3)
 
