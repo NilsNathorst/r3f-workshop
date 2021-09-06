@@ -4,21 +4,15 @@
 
 [React-Three-Fiber](https://medium.com/better-programming/react-three-fiber-build-3d-for-the-web-with-react-and-webgl-easily-c0df8801292) or R3F is a powerful React renderer for three.js scenes, both for the web and with React Native.
 
-- :scissors: Examples
-
-  - [Three JS examples](https://threejs.org/)
-
-  - [React three fiber examples](https://codesandbox.io/examples/package/react-three-fiber)
-
 - :books: Documentation
 
-  - [react-three-fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction)
+  - [@react-three/fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction)
 
   - [three.js](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene)
 
-  - [drei](https://drei.react-spring.io/?path=/story/abstractions-billboard--billboard-st)
+  - [drei](https://drei.pmnd.rs/?path=/story/performance-adaptive--adaptive-scene-st)
 
-  - [react-spring](https://www.react-spring.io/docs/hooks/basics)
+  - [react-spring](https://react-spring.io/)
 
 - :link: Links
 
@@ -38,7 +32,7 @@
    - [`@react-three/drei`](https://www.npmjs.com/package/@react-three/drei)
    - [`three`](https://www.npmjs.com/package/three)
 
-   Since we are using [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API) we will need a `canvas` element. Luckily we can import it from `react-three-fiber` and add it to our react app.
+   Since we are using [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API) we will need a `canvas` element. Luckily we can import it from `@react-three/fiber` and add it to our react app.
 
    ```javascript
    import { Canvas } from "@react-three/fiber";
@@ -93,10 +87,10 @@
    <Cube width={1} height={1} depth={1} color="hotpink" />
    ```
 
-   Now you probably still have a black cube, and that is because we haven't added any [lights](https://threejs.org/docs/#api/en/lights/AmbientLight) to our scene yet. go ahead and add `<ambientLight/>` inside your canvas (optionally you can add a [`<pointLight/>`](https://threejs.org/docs/#api/en/lights/PointLight) aswell, it can be positioned via the `position` prop, you will need to provide it with an array containing a [Vector3](https://threejs.org/docs/#api/en/math/Vector3), meaning a x, y & z value).
+   Now you probably still have a black cube, and that is because we haven't added any [lights](https://threejs.org/docs/#api/en/lights/AmbientLight) to our scene yet. go ahead and add `<ambientLight/>` inside your canvas (optionally you can also add a [`<pointLight/>`](https://threejs.org/docs/#api/en/lights/PointLight) aswell, it can be positioned via the `position` prop, you will need to provide it with an array containing a [Vector3](https://threejs.org/docs/#api/en/math/Vector3), meaning a x, y & z value).
    You should now see the color of your cube.
 
-   `drei` that we installed is a useful collection of helpers for `react-three-fiber` try importing and adding `<OrbitControls/>` to your scene.
+   `drei` that we installed is a useful collection of helpers for `@react-three/fiber` try importing and adding `<OrbitControls/>` to your scene.
 
    ```javascript
    import { OrbitControls } from "@react-three/drei";
@@ -125,7 +119,7 @@
    )
    ```
 
-   Now when we add `a.` to our mesh (i.e `<a.mesh/>`) some of it's properties can be animated with react-spring, check out the documentation for [`useSpring`](https://www.react-spring.io/docs/hooks/use-spring) and then see if you can add an `onClick` that changes the `scale` property of the mesh and a hover effect that changes the `color` of the cube.
+   Now when we add `a.` to our mesh (i.e `<a.mesh/>`) some of it's properties can be animated with react-spring, check out the documentation for [`useSpring`](https://react-spring.io/hooks/use-spring) and then see if you can add an `onClick` that changes the `scale` property of the mesh and a hover effect that changes the `color` of the cube.
 
    The scale property accepts an array containing a [Vector3](https://threejs.org/docs/#api/en/math/Vector3)
 
@@ -171,6 +165,6 @@
      <img src="/img/Lesson_3.gif" width="80%">
    </p>
 
-5. **Extra:** Check out [drei's documentation](https://drei.react-spring.io/?path=/story/abstractions-billboard--billboard-st) and add a `<Html/>` to each of the planets containing the planet's name!
+5. **Extra:** Check out [drei's documentation](https://github.com/pmndrs/drei#html) and add a `<Html/>` to each of the planets containing the planet's name!
 
-6. **Extra:** If you still have time, continue on your solar system and see what else you can add! Perhaps lines indicating the orbit of the planets, some info about the planets triggered when clicking them or maybe check out some [texture loaders](https://drei.react-spring.io/?path=/story/loaders-cubetexture--use-cube-texture-loader-scene-st) and add some textures to the planets!
+6. **Extra:** If you still have time, continue on your solar system and see what else you can add! Perhaps lines indicating the orbit of the planets, some info about the planets triggered when clicking them or maybe check out some [texture loaders](https://drei.pmnd.rs/?path=/story/loaders-texture--use-texture-scene-st) and add some textures to the planets!
