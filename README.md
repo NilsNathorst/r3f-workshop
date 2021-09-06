@@ -10,7 +10,7 @@
 
   - [three.js](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene)
 
-  - [drei](https://drei.pmnd.rs/?path=/story/performance-adaptive--adaptive-scene-st)
+  - [@react-three/drei](https://drei.pmnd.rs/?path=/story/performance-adaptive--adaptive-scene-st)
 
   - [react-spring](https://react-spring.io/)
 
