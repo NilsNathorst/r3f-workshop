@@ -12,7 +12,7 @@
 
   - [@react-three/drei](https://drei.pmnd.rs/?path=/story/performance-adaptive--adaptive-scene-st)
 
-  - [react-spring](https://react-spring.io/)
+  - [@react-spring/three](https://react-spring.io/)
 
 - :link: Links
 
