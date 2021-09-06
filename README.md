@@ -134,7 +134,7 @@
 3. Now it's time to create a new project, just like in step 1.
 
    Copy the `Planets` array from the [`Planets.js`](resources/Planets.js) file.
-   Iterate over the Planets and create a [`<sphereBufferGeometry/>`](https://threejs.org/docs/#api/en/geometries/SphereBufferGeometry) for each one. Use the `size` property to determine it's radius, pass it as the first parameter of `args`.
+   Iterate over the Planets and create a [`<sphereBufferGeometry/>`](https://threejs.org/docs/?q=sph#api/en/geometries/SphereGeometry) for each one. Use the `size` property to determine it's radius, pass it as the first parameter of `args`.
    (tip: if they are way too big, use the scale attribute of the mesh to make them smaller).
 
    If we imagine position `[0,0,0]` as the Sun's position place the planets accordingly using their `distanceFromSun` property along the x-axis. (I'll let you figure out how to add a Sun on your own)
@@ -147,7 +147,7 @@
 
    I suggest placing each of the planets within a `<group>` element since the groups position will default to `[0,0,0]` and we can use that as a pivot point when we rotate the planet.
 
-   You will also need to use the `useFrame` hook from `react-three-fiber` and add a reference to your mesh or group to then be able to update it's properties each frame.
+   You will also need to use the `useFrame` hook from `@react-three/fiber` and add a reference to your mesh or group to then be able to update it's properties each frame.
 
    ```javascript
    const mesh = useRef();
