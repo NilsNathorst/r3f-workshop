@@ -76,8 +76,8 @@
 
    ```javascript
    <mesh>
-     <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
-     <meshStandardMaterial attach="material" color="hotpink" />
+     <boxBufferGeometry args={[1, 1, 1]} />
+     <meshStandardMaterial color="hotpink" />
    </mesh>
    ```
 
