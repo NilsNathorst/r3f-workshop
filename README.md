@@ -131,40 +131,12 @@
      <img src="/img/Lesson_2.gif" width="80%">
    </p>
 
-3. Now it's time to create a new project, just like in step 1.
+3. **Extra:** Another way to animate our objects rather than using `@react-spring/three` is utilizing the [`useFrame`](https://docs.pmnd.rs/react-three-fiber/tutorials/basic-animations) hook from `@react-three/fiber`
 
-   Copy the `Planets` array from the [`Planets.js`](resources/Planets.js) file.
-   Iterate over the Planets and create a [`<sphereBufferGeometry/>`](https://threejs.org/docs/?q=sph#api/en/geometries/SphereGeometry) for each one. Use the `size` property to determine it's radius, pass it as the first parameter of `args`.
-   (tip: if they are way too big, use the scale attribute of the mesh to make them smaller).
+4. **Extra:** See if you can add some shadows to your scene. A good place to start to figure out how to do so is [`softShadows`](https://docs.pmnd.rs/drei/shaders/soft-shadows). Remember to add something that the shadow can be cast on.
 
-   If we imagine position `[0,0,0]` as the Sun's position place the planets accordingly using their `distanceFromSun` property along the x-axis. (I'll let you figure out how to add a Sun on your own)
-
-   ```javascript
-   <mesh position={[ ... ]}>
-   ```
-
-4. Continue working on the previous assignment. Now let's animate the planets. Each planet has a `orbitalVelocity` property. Use this to determine how fast they should orbit around the Sun.
-
-   I suggest placing each of the planets within a `<group>` element since the groups position will default to `[0,0,0]` and we can use that as a pivot point when we rotate the planet.
-
-   You will also need to use the `useFrame` hook from `@react-three/fiber` and add a reference to your mesh or group to then be able to update it's properties each frame.
-
-   ```javascript
-   const mesh = useRef();
-
-   useFrame(() => {
-     /* Example: move something sideways 
-       mesh.current.position.x += 1
-     */
-   });
-   ```
-
-   It should look something like this:
+   Here's an example how it could look with shadows and an animation:
 
    <p align="center">
-     <img src="/img/Lesson_3.gif" width="80%">
+     <img src="/img/Extra.gif" width="80%">
    </p>
-
-5. **Extra:** Check out [drei's documentation](https://github.com/pmndrs/drei#html) and add a `<Html/>` to each of the planets containing the planet's name!
-
-6. **Extra:** If you still have time, continue on your solar system and see what else you can add! Perhaps lines indicating the orbit of the planets, some info about the planets triggered when clicking them or maybe check out some [texture loaders](https://drei.pmnd.rs/?path=/story/loaders-texture--use-texture-scene-st) and add some textures to the planets!
