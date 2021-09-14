@@ -121,6 +121,8 @@
 
    Now when we add `a.` to our mesh (i.e `<a.mesh/>`) some of it's properties can be animated with react-spring, check out the documentation for [`useSpring`](https://react-spring.io/hooks/use-spring) and then see if you can add an `onClick` that changes the `scale` property of the mesh and a hover effect that changes the `color` of the cube.
 
+   Here you can find information about [`pointer events`](https://docs.pmnd.rs/react-three-fiber/API/events).
+
    The scale property accepts an array containing a [Vector3](https://threejs.org/docs/#api/en/math/Vector3)
 
    Don't forget to update your material `<a.meshStandardMaterial/>`
