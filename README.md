@@ -131,7 +131,7 @@
      <img src="/img/Lesson_2.gif" width="80%">
    </p>
 
-3. **Extra:** Another way to animate our objects rather than using `@react-spring/three` is utilizing the [`useFrame`](https://docs.pmnd.rs/react-three-fiber/tutorials/basic-animations) hook from `@react-three/fiber`
+3. **Extra:** Another way to animate our objects rather than using `@react-spring/three` is utilizing the [`useFrame`](https://docs.pmnd.rs/react-three-fiber/tutorials/basic-animations) hook from `@react-three/fiber`. See if you can add a simple animation to your `<Cube />` like the one in the screenshot below.
 
 4. **Extra:** See if you can add some shadows to your scene. A good place to start to figure out how to do so is [`softShadows`](https://docs.pmnd.rs/drei/shaders/soft-shadows). Remember to add something that the shadow can be cast on.
 
